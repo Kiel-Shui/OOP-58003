@@ -1,0 +1,39 @@
+from tkinter import *
+
+window = Tk()
+window.title("Semestral Grade Calculator")
+window.geometry("400x150")
+
+lb1 = Label(window,text="Term Grades")
+lb1.grid(row = 1,column = 2)
+lb2 = Label(window,text="Prelims:")
+lb2.grid(row=2,column=1)
+pg = Entry(window)
+pg.grid(row=3,column=1,padx=4)
+lb3 = Label(window,text="Midterms:")
+lb3.grid(row=2,column=2)
+mg = Entry(window)
+mg.grid(row=3, column=2,padx=4)
+lb4 = Label(window, text="Finals: ")
+lb4.grid(row=2,column=3)
+fg = Entry(window)
+fg.grid(row=3, column=3,padx=4)
+
+def SemGrade():
+    semestral.delete(0,"end")
+    num1=int(pg.get())
+    num2=int(mg.get())
+    num3=int(fg.get())
+    answer=(((num1)*0.4)+((num2)*0.4)+((num3)*0.3))
+    semestral.insert(END,str(answer))
+
+lb5 = Label(window,text = "  Calculate  ")
+lb5.grid(row=4,column = 1)
+bt=Button(window,text="=",width=2, command=SemGrade)
+bt.grid(row=5,column=1)
+lb6 = Label(window,text = "Semestral Grade:")
+lb6.grid(row=4,column = 2)
+semestral = Entry(window)
+semestral.grid(row=5, column = 2)
+
+window.mainloop()
