@@ -24,7 +24,7 @@ def clear():
     expression = ""
     equation.set("")
  
-if __name__ == "__main__":
+if __Calc__ == "__main__":
     gui = Tk()
     gui.configure(background="white")
     gui.title("Simple Calculator")
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     divide.grid(row=5, column=3)
  
     equal = Button(gui, text=' = ', fg='black', bg='green',
-                command=equalpress, height=1, width=7)
+                command=lambda: press('='), height=1, width=7)
     equal.grid(row=5, column=2)
  
     clear = Button(gui, text='Clear', fg='black', bg='green',
